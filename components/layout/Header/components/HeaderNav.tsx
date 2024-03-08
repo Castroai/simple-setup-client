@@ -9,8 +9,6 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-
-import { signOut } from "next-auth/react";
 import Link from "next/link";
 import SignOutButton from "../../DashboardLayout/components/signout-button";
 

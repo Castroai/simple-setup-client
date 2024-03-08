@@ -21,11 +21,13 @@ import { ReactNode } from "react";
 import SideNavigation from "./components/SideNavigation";
 import { redirect } from "next/navigation";
 import SignOutButton from "./components/signout-button";
+import { getSession } from "@/lib/auth";
 export default async function DashboardLayout({
   children,
 }: {
   children: ReactNode;
 }) {
+  const session = await getSession();
   return (
     <div className="grid min-h-screen w-full lg:grid-cols-[280px_1fr]">
       <div className="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
@@ -86,7 +88,7 @@ export default async function DashboardLayout({
                 size="icon"
                 variant="ghost"
               >
-                {/* <Image
+                <Image
                   alt="Avatar"
                   className="rounded-full"
                   height="32"
@@ -96,7 +98,7 @@ export default async function DashboardLayout({
                     objectFit: "cover",
                   }}
                   width="32"
-                /> */}
+                />
                 <span className="sr-only">Toggle user menu</span>
               </Button>
             </DropdownMenuTrigger>

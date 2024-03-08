@@ -33,7 +33,7 @@ export async function getSession() {
     });
 
     if (status === 200) {
-      console.log(data);
+      // console.log(data);
       return data;
     } else {
       return null;
