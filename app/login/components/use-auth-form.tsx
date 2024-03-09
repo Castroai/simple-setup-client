@@ -31,7 +31,9 @@ export function UserAuthForm({
     try {
       const org_id = await authenticate(email);
       if (org_id) {
-        window.location.assign(`http://localhost:3333/openid/start/${org_id}`);
+        window.location.assign(
+          `http://${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_API_PORT}/openid/start/${org_id}`
+        );
         return;
       }
     } catch (error) {

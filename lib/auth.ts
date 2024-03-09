@@ -1,8 +1,9 @@
+import { User } from "next-auth";
 import httpInstance from "./http_service";
 import { cookies } from "next/headers";
 
 export async function signIn(email: string) {
-  const url = `http://localhost:3333/openid/check`;
+  const url = `http://${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_API_PORT}/openid/check`;
   try {
     const res = await fetch(url, {
       method: "POST",
@@ -22,25 +23,23 @@ export async function signIn(email: string) {
   return null;
 }
 
-export async function getSession() {
+export async function getSession(): Promise<User | null> {
+  const res = httpInstance.get("/openid/me", {
+    headers: {
+      // @ts-ignore
+      Cookie: cookies(),
+    },
+    withCredentials: true,
+  });
   try {
-    const { data, status } = await httpInstance.get("/openid/me", {
-      headers: {
-        // @ts-ignore
-        Cookie: cookies(),
-      },
-      withCredentials: true,
-    });
-
-    if (status === 200) {
-      console.log(data);
-      return data;
-    } else {
+    const data = await res;
+    if (data.status === 401) {
       return null;
+    } else {
+      return data.data;
     }
-  } catch (error: unknown) {
-    // setAuthState(defaultAuthState);
-    // console.error(error);
-    throw error;
+  } catch (error) {
+    console.error(error);
+    return null;
   }
 }

@@ -92,7 +92,7 @@ export default async function DashboardLayout({
                   alt="Avatar"
                   className="rounded-full"
                   height="32"
-                  src={(session && session.user && session.user.image) || ""}
+                  src={""}
                   style={{
                     aspectRatio: "32/32",
                     objectFit: "cover",
