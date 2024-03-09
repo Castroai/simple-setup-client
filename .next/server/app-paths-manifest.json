@@ -2,12 +2,12 @@
   "/_not-found": "app/_not-found.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/settings/page": "app/dashboard/settings/page.js",
-  "/dashboard/teams/page": "app/dashboard/teams/page.js",
-  "/onboard/page": "app/onboard/page.js",
   "/dashboard/teams/[id]/page": "app/dashboard/teams/[id]/page.js",
-  "/page": "app/page.js",
-  "/dashboard/teams/create/page": "app/dashboard/teams/create/page.js",
+  "/dashboard/teams/page": "app/dashboard/teams/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/login/page": "app/login/page.js",
-  "/register/page": "app/register/page.js"
+  "/dashboard/teams/create/page": "app/dashboard/teams/create/page.js",
+  "/onboard/page": "app/onboard/page.js",
+  "/page": "app/page.js",
+  "/register/page": "app/register/page.js",
+  "/login/page": "app/login/page.js"
 }
