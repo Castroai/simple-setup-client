@@ -7,7 +7,10 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate",
-    "build": "next build"
+    "build": "next build",
+    "docker-build": "docker build -t simple-setup-client .",
+    "docker-dev": "docker run -p 3000:3000 -v cd /usr/src/app -v /usr/src/app/node_modules -w /usr/src/app simple-setup-client npm run dev",
+    "docker-start": "docker run -p 3000:3000 simple-setup-client"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.5.0",

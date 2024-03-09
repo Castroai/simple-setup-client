@@ -33,7 +33,7 @@ export async function getSession() {
     });
 
     if (status === 200) {
-      // console.log(data);
+      console.log(data);
       return data;
     } else {
       return null;
@@ -41,5 +41,6 @@ export async function getSession() {
   } catch (error: unknown) {
     // setAuthState(defaultAuthState);
     // console.error(error);
+    throw error;
   }
 }

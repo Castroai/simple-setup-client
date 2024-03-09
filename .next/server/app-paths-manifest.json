@@ -1,6 +1,13 @@
 {
-  "/page": "app/page.js",
-  "/dashboard/teams/page": "app/dashboard/teams/page.js",
+  "/_not-found": "app/_not-found.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/dashboard/settings/page": "app/dashboard/settings/page.js",
+  "/dashboard/teams/[id]/page": "app/dashboard/teams/[id]/page.js",
+  "/dashboard/teams/create/page": "app/dashboard/teams/create/page.js",
+  "/dashboard/teams/page": "app/dashboard/teams/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/onboard/page": "app/onboard/page.js",
+  "/register/page": "app/register/page.js",
+  "/login/page": "app/login/page.js"
 }
