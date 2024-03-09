@@ -31,7 +31,9 @@ export function UserAuthForm({
     try {
       const org_id = await authenticate(email);
       if (org_id) {
-        window.location.assign(`http://localhost:3333/openid/start/${org_id}`);
+        window.location.assign(
+          `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/openid/start/${org_id}`
+        );
         return;
       }
     } catch (error) {
