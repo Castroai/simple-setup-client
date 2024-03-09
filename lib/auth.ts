@@ -3,23 +3,21 @@ import httpInstance from "./http_service";
 import { cookies } from "next/headers";
 
 export async function signIn(email: string) {
-  const url = `http://${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_API_PORT}/openid/check`;
   try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username: email }),
-    });
-
-    const { org_id } = await res.json();
-
+    const { data } = await httpInstance.post(
+      "/openid/check",
+      { username: email },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const { org_id } = data;
     return org_id;
   } catch (error: unknown) {
     console.error(error);
   }
-
   return null;
 }
 
