@@ -32,7 +32,7 @@ export function UserAuthForm({
       const org_id = await authenticate(email);
       if (org_id) {
         window.location.assign(
-          `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/openid/start/${org_id}`
+          `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL_EXTERNAL}/openid/start/${org_id}`
         );
         return;
       }
