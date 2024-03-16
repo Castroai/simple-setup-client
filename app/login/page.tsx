@@ -25,10 +25,10 @@ export default function LoginPage({ params, searchParams }: Root) {
     jwt.verify(searchParams.token, "default_secret_key", (err, decoded) => {
       if (err) {
         // Invalid Token Signature
-        console.error("Token verification failed:", err.message);
+        // console.error("Token verification failed:", err.message);
         redirect("/");
       } else {
-        console.log("Decoded Token:", decoded);
+        // console.log("Decoded Token:", decoded);
       }
     });
   }

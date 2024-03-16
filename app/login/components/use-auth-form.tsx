@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { authenticate } from "@/lib/actions";
-
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({
@@ -37,7 +36,7 @@ export function UserAuthForm({
         return;
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   };
 
@@ -83,9 +82,9 @@ export function UserAuthForm({
         variant="outline"
         type="button"
         disabled={isLoading}
-        // onClick={async () => {
-        //   await signIn("github");
-        // }}
+        onClick={async () => {
+          // await signIn("github");
+        }}
       >
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />

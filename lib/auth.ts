@@ -13,10 +13,10 @@ export async function signIn(email: string) {
         },
       }
     );
-    const { org_id } = data;
-    return org_id;
+    const { orgId } = data;
+    return orgId;
   } catch (error: unknown) {
-    console.error(error);
+    // console.error(error);
   }
   return null;
 }
@@ -32,12 +32,15 @@ export async function getSession(): Promise<User | null> {
   try {
     const data = await res;
     if (data.status === 401) {
+      // console.log("NOT AUTH");
+
       return null;
     } else {
+      // console.log("authenticated");
       return data.data;
     }
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return null;
   }
 }
